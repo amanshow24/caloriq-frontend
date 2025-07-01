@@ -1,0 +1,159 @@
+.home-container {
+  display: flex;
+  padding: 4rem 2rem;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+  transition: all 0.3s ease;
+}
+
+.home-left {
+  flex: 1;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.home-left h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.home-left ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.home-left ul li {
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.home-left .description + .description {
+  margin-top: 1rem;
+}
+
+.home-right {
+  flex: 1;
+  max-width: 550px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.home-right label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+select {
+  margin-top: 6px;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fcfcfc;
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  background: #888;
+  color: white;
+  cursor: not-allowed;
+}
+
+button[type='submit'] {
+  background: #007bff;
+  color: white;
+}
+
+button[type='submit']:hover {
+  background: #0056b3;
+}
+
+.reset {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.reset:hover {
+  background: #c8c8c8;
+}
+
+.result {
+  margin-top: 1rem;
+  color: #28a745;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+
+  .home-left,
+  .home-right {
+    max-width: 100%;
+  }
+
+  .home-right {
+    margin-top: 2rem;
+  }
+
+  .home-left {
+    text-align: center;
+  }
+
+  .home-left ul {
+    align-items: center;
+  }
+}
