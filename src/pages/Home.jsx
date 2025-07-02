@@ -13,6 +13,7 @@ function Home() {
   });
 
   const [result, setResult] = useState(null);
+  const [resultMessage, setResultMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -32,6 +33,7 @@ function Home() {
       Body_Temp: ''
     });
     setResult(null);
+    setResultMessage('');
     setError('');
   };
 
@@ -39,6 +41,7 @@ function Home() {
     e.preventDefault();
     setError('');
     setResult(null);
+    setResultMessage('');
 
     for (let key in formData) {
       if (formData[key] === '' || Number(formData[key]) < 0) {
@@ -49,15 +52,26 @@ function Home() {
 
     setLoading(true);
     try {
-     const res = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
-
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
       const data = await res.json();
       if (data.predicted_calories !== undefined) {
-        setResult(data.predicted_calories);
+        const rounded = Math.round(data.predicted_calories);
+        let message = '';
+
+        if (rounded < 100) {
+          message = `🔥 Light burn! You torched about ${rounded} calories.`;
+        } else if (rounded < 300) {
+          message = `💪 Solid effort! You burned roughly ${rounded} calories.`;
+        } else {
+          message = `🔥 Beast mode! You crushed it with ${rounded} calories burned.`;
+        }
+
+        setResult(rounded);
+        setResultMessage(message);
       } else {
         setError('⚠️ ' + data.error);
       }
@@ -141,7 +155,7 @@ function Home() {
         </form>
 
         {error && <p className="error">{error}</p>}
-        {result !== null && <p className="result">🔥 You burned about {result} calories!</p>}
+        {result !== null && <p className="result">{resultMessage}</p>}
       </div>
     </div>
   );

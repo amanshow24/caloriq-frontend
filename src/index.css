@@ -1,12 +1,18 @@
-/* Reset and base styles */
+/* index.css — Basic Reset and Foundation Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
+  line-height: 1.6;
 }

@@ -1,14 +1,46 @@
 .footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.95rem;
-  color: #555;
   background-color: #f8f9fa;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
+  color: #333;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+.footer strong {
+  color: #e63946;
 }
 
 .footer .author {
-  font-weight: 600;
-  color: #222;
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Dark mode support (if you're using dark theme toggle) */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-top-color: #333;
+  }
+
+  .footer strong {
+    color: #ff6b6b;
+  }
+
+  .footer .author {
+    color: #ccc;
+  }
+}
+
+/* Responsive adjustment (optional, for very small screens) */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
 }
