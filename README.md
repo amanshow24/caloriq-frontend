@@ -6,7 +6,7 @@ CaloriQ is a full-stack web application that predicts calories burned based on u
 
 ## 🚀 Live Demo 
 
- 🔗 [Live Demo](https://caloriq-ten.vercel.app/) 
+ 🔗 [Live Demo]   https://caloriq-ten.vercel.app/
 
 ---
 
@@ -112,6 +112,3 @@ Licensed under the [MIT License](LICENSE).
 ---
 
 > Built with ❤️ by Aman Show
-
-```
-
